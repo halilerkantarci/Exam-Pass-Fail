@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Untitled Document</title>
+  </head>
+  <body>
+    <p>
+      <label for="textfield">Vize : </label>
+      <input type="text" name="textfield" id="txtVize" />
+    </p>
+    <p>
+      <label for="textfield2">Final : </label>
+      <input type="text" name="textfield2" id="txtFinal" />
+      <input type="button" name="button" id="hesap" value="HESAPLA" />
+    </p>
+    <p><label id="lblSonuc"></label>&nbsp;</p>
+
+    <script>
+      const vize = document.getElementById("txtVize");
+      const final = document.getElementById("txtFinal");
+      const butonHesapla = document.getElementById("hesap");
+      butonHesapla.addEventListener("click", () => {
+        let vize1 = Number(vize.value);
+        let final1 = Number(final.value);
+        let ortalama = vize1 * 0.4 + final1 * 0.6;
+        if (ortalama >= 50) {
+          document.getElementById("lblSonuc").innerHTML = "Tebrikler Geçtiniz";
+        } else {
+          document.getElementById("lblSonuc").innerHTML = "Kaldınız";
+        }
+      });
+    </script>
+  </body>
+</html>
